@@ -14,7 +14,6 @@ if REBUILD:
         build_output = project.get("build_output", "")
         print(f" * Eseguendo 'npm run build' per il progetto: {project['name']} nella cartella: {angular_path}")
         try:
-            # Esegui il comando npm run build per ogni progetto Angular utilizzando subprocess.call
             subprocess.call("npm run build", cwd=angular_path, shell=True)
             print(f" * Build completata per il progetto {project['name']}")
         except subprocess.CalledProcessError as e:

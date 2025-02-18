@@ -1,13 +1,18 @@
 import os
-from flask import Blueprint, send_from_directory
+from flask import Blueprint, send_from_directory, render_template
 from config_loader import ANGULAR_PROJECTS
 
 routes = Blueprint("routes", __name__)
 
+@routes.route('/')
+def serve_list():
+    projects = [project["name"] for project in ANGULAR_PROJECTS] or []
+    return render_template("index.html", projects=projects)
+
 @routes.route('/<project_name>')
 @routes.route('/<project_name>/')
 @routes.route("/<project_name>/<path:path>")
-def serve_static(project_name, path=''):
+def serve_project(project_name, path=''):
     project = next((proj for proj in ANGULAR_PROJECTS if proj["name"] == project_name), None)
     if project:
         dist_path = os.path.join(project["path"], project["build_output"])

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EVT Server</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"">
+    </head>
+    <body>
+        <nav class="navbar justify-content-between temp-header">
+        <a class="navbar-brand">
+            <img height="30" alt="evt3 logo" class="d-inline-block align-top me-2" src="{{ url_for('static', filename='images/logo_white.png') }}">
+            <h1 class="edition-title">
+                <span class="edition-font pointer">EVT Server</span>
+            </h1>
+        </a>
+        </nav>
+        <div class="content">
+            <h2>Distribuzioni configurate</h2>
+            <ul>
+                {% for project in projects %}
+                <li><a href="/{{ project }}/">{{ project }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="footer"></div>
+    </body>
+
+</html>

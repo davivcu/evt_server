@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.navbar {
+    color: #eceff1;
+    background-color: #263238;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    padding-top: 0;
+}
+.edition-title {
+    font-family: Junicode, Times, serif;
+    font-size: 1.1rem;
+    display: inline-block;
+    color: white;
+    padding-top: 0.5rem;
+    margin-top: 1rem;
+    font-weight: 400;
+}
+
+.edition-title span {
+    vertical-align: super;
+    padding-left: 1rem;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    background-color: #263238;
+    padding: 1rem;
+    width: 100%;
+}
+
+.content {
+    padding: 1rem;
+}
+
+a {
+    color: black;
+}
