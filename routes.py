@@ -6,7 +6,6 @@ routes = Blueprint("routes", __name__)
 
 @routes.route("/<project_name>/<path:path>")
 def serve_static(project_name, path):
-    # Trova il progetto corrispondente al nome
     project = next((proj for proj in ANGULAR_PROJECTS if proj["name"] == project_name), None)
     if project:
         dist_path = os.path.join(project["path"], project["build_output"])
