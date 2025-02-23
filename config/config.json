@@ -2,7 +2,8 @@
   "REBUILD": false,
   "HOST": "0.0.0.0",
   "PORT": 5000,
-  "ANGULAR_PROJECTS": [
+  "LOGGING_ON_FILE": true,
+  "EVT_PROJECTS": [
     {
       "name": "progetto_saba",
       "path": "distributions/evt-viewer-angular/",
